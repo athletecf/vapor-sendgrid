@@ -5,13 +5,13 @@ public final class SendgridEmail: Content {
     let from: EmailContact
     let reply_to: EmailContact?
     let subject: String
-    let content: EmailContent
+    let content: [EmailContent]
     
     public init(personalizations: [Personalization], from: EmailContact, subject: String, content: EmailContent, reply_to: EmailContact? = nil) {
         self.personalizations = personalizations
         self.from = from
         self.subject = subject
-        self.content = content
+        self.content = [content]
         self.reply_to = reply_to
     }
     

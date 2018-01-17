@@ -6,7 +6,7 @@ public final class SendgridEmail: Content {
     let reply_to: EmailContact?
     let subject: String
     
-    init(personalizations: [Personalization], from: EmailContact, subject: String, reply_to: EmailContact? = nil) {
+    public init(personalizations: [Personalization], from: EmailContact, subject: String, reply_to: EmailContact? = nil) {
         self.personalizations = personalizations
         self.from = from
         self.subject = subject

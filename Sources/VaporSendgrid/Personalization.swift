@@ -4,7 +4,7 @@ public final class Personalization: Content {
     
     let toAddresses: [EmailContact]
     
-    init(toAddresses: [EmailContact]) {
+    public init(toAddresses: [EmailContact]) {
         self.toAddresses = toAddresses
     }
     
@@ -17,7 +17,7 @@ public final class EmailContact: Content {
     let email: String
     let name: String?
     
-    init(email: String, name: String? = nil) {
+    public init(email: String, name: String? = nil) {
         self.email = email
         self.name = name
     }

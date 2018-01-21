@@ -10,7 +10,10 @@ public final class SendgridProvider: Provider {
     }
     
     public func register(_ services: inout Services) throws {
-        services.register(Sendgrid(apiKey: apiKey))
+        services.register(Sendgrid.self) { container -> Sendgrid in
+            let client = try container.make(Client.self, for: Sendgrid.self)
+            return Sendgrid(apiKey: self.apiKey, client: client)
+        }
     }
     
     public func boot(_ worker: Container) throws { }
